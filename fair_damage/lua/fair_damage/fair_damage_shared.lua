@@ -36,10 +36,10 @@ ConVarsDefault = {
   sk_headcrab_health = 10,
   sk_headcrab_melee_dmg = 5,
 
-  // Fast" = "Headcrab
+  // Fast Headcrab
   sk_headcrab_fast_health = 10,
 
-  // Poison" = "Headcrab
+  // Poison Headcrab
   sk_headcrab_poison_health = 35,
 
   // Houndeye
@@ -84,16 +84,17 @@ ConVarsDefault = {
   sk_zombie_dmg_one_slash = 10,
   sk_zombie_dmg_both_slash = 25,
 
-  // Poison" = "Zombie
+  // Poison Zombie
   sk_zombie_poison_health = 175,
   sk_zombie_poison_dmg_spit = 20,
 
   //Antlion
   sk_antlion_health = 30,
   sk_antlion_swipe_damage = 5,
-  sk_antlion_jump_damage = 5,
+  --sk_antlion_jump_damage = 5,
+  --sk_antlion_air_attack_dmg = 10,
 
-  //Antlion" = "Guard
+  //Antlion Guard
   sk_antlionguard_health = 500,
   sk_antlionguard_dmg_charge = 20,
   sk_antlionguard_dmg_shove = 10,
@@ -105,14 +106,15 @@ ConVarsDefault = {
   --sk_ichthyosaur_health = 200,
   --sk_ichthyosaur_melee_dmg = 8,
 
-  // Combine" = "Gunship
+  // Combine Gunship
   sk_gunship_burst_size = 15,
   sk_gunship_health_increments = 5,
   sk_npc_dmg_gunship = 40,
   sk_npc_dmg_gunship_to_plr = 3,
 
-  // Combine" = "Helicopter
-  sk_npc_dmg_helicopter = 6,
+  // Combine Helicopter
+  --sk_helicopter_health = 5600,
+  sk_npc_dmg_helicopter = 3,
   sk_npc_dmg_helicopter_to_plr = 3,
   sk_helicopter_grenadedamage = 30,
   sk_helicopter_grenaderadius = 275,

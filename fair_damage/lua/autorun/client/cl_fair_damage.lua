@@ -17,9 +17,9 @@ end
 
 --Panel functions.
 
-local function addHealthSettingToDForm( dform, name, cvar )
+local function addHealthSettingToDForm( dform, name, cvar, upper_limit )
 
-	local slider = dform:NumSlider( name, cvar, 1, 120, 0 )
+	local slider = dform:NumSlider( name, cvar, 1, upper_limit or 120, 0 )
 
 end
 
@@ -109,13 +109,14 @@ hook.Add( "PopulateToolMenu", "fairdamage_configuration", function()
 		addHealthSettingToDForm( panel, "Combine Soldier", "sk_combine_s_health" )
 		addHealthSettingToDForm( panel, "Combine Soldier Elite", "sk_combine_guard_health" )
 		addHealthSettingToDForm( panel, "Manhack", "sk_manhack_health" )
+		--addHealthSettingToDForm( panel, "Combine Helicopter", "sk_helicopter_health", 10000 )
 		addHealthSettingToDForm( panel, "Headcrab (and fast)", "sk_headcrab_health" )
 		addHealthSettingToDForm( panel, "Headcrab Poison", "sk_headcrab_poison_health" )
 		addHealthSettingToDForm( panel, "Zombie", "sk_zombie_health" )
 		addHealthSettingToDForm( panel, "Poison Zombie", "sk_zombie_poison_health" )
 		addHealthSettingToDForm( panel, "Zombine", "sk_zombie_soldier_health" )
 		addHealthSettingToDForm( panel, "Antlion", "sk_antlion_health" )
-		addHealthSettingToDForm( panel, "Antlion Guard", "sk_antlionguard_health" )
+		addHealthSettingToDForm( panel, "Antlion Guard", "sk_antlionguard_health", 1000 )
 		
 		//NPC Melee Damage.
 		panel:Help("NPC Melee Damage")
@@ -124,9 +125,12 @@ hook.Add( "PopulateToolMenu", "fairdamage_configuration", function()
 		addHealthSettingToDForm( panel, "Manhack", "sk_manhack_melee_dmg" )
 		addHealthSettingToDForm( panel, "Headcrab", "sk_headcrab_melee_dmg" )
 		addHealthSettingToDForm( panel, "Zombie", "sk_zombie_dmg_one_slash" )
+		addHealthSettingToDForm( panel, "Antlion", "sk_antlion_swipe_damage" )
 		
 		panel:Help("NPC Special Damage")
 		addHealthSettingToDForm( panel, "AR2 Ball", "sk_npc_dmg_combineball" )
+		addMultiVarNumSlider   ( panel, "Helicopter Gun", { "sk_npc_dmg_helicopter", "sk_npc_dmg_helicopter_to_plr" } )
+		addHealthSettingToDForm( panel, "Helicopter Grenade", "sk_helicopter_grenadedamage" )
 		
 		//Weapon Base Damage.
 		panel:Help("Base Weapon Damage")
